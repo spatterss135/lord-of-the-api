@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 import { useState, useEffect } from 'react';
-=======
->>>>>>> 7ee89363d7b6fe56c5c845f2878eb7e1c4c69725
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from "react";
@@ -53,22 +50,15 @@ fetchData()
 
   return (
     <div className="App">
-<<<<<<< HEAD
-      <Books handleFetch={handleFetch} data={data}/>
-      
-      <Characters />
-      <Movies />
-=======
       <Router>
         <NavBar></NavBar>
         <Routes>
           <Route exact path='/' element={<Home/>}/>
-          <Route path='/books' element={<Books/>}/>
+          <Route path='/books' element={<Books />}/>
           <Route path='/movies' element={<Movies/>}/>
           <Route path='/characters' element={<Characters/>}/>
         </Routes>
       </Router>
->>>>>>> 7ee89363d7b6fe56c5c845f2878eb7e1c4c69725
     </div>
   );
 }
