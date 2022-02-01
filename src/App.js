@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import './App.css';
 
 // Components
@@ -9,45 +8,44 @@ import { useEffect, useState } from 'react';
 
 function App() {
 
-    let [data, setData] = useState([])
+  let [data, setData] = useState([])
 
-    
+  //   useEffect(() => {
+  //     let fetchData = async () => {
+  //         let response = await fetch(`${endpoint}`, {
+  //             headers: {
+  //                 Authorization: `Bearer QG6hwAvDDV3WtknfWiAL`
+  //             }
+  //         })
+  //         let rData = await response.json()
+  //         console.log(rData)
+  //     }
+  //     fetchData()
+  // })
 
-//   useEffect(() => {
-//     let fetchData = async () => {
-//         let response = await fetch(`${endpoint}`, {
-//             headers: {
-//                 Authorization: `Bearer QG6hwAvDDV3WtknfWiAL`
-//             }
-//         })
-//         let rData = await response.json()
-//         console.log(rData)
-//     }
-//     fetchData()
-// })
-
-function handleFetch(e, query){
-  e.preventDefault()
-  const endpoint =  'https://the-one-api.dev/v2'
-  let fetchData = async () => {
-    let response = await fetch(`${endpoint}/${query}`, {
+  function handleFetch(e, query) {
+    e.preventDefault()
+    const endpoint = 'https://the-one-api.dev/v2'
+    let fetchData = async () => {
+      let response = await fetch(`${endpoint}/${query}`, {
         headers: {
-            Authorization: `Bearer QG6hwAvDDV3WtknfWiAL`
+          Authorization: `Bearer QG6hwAvDDV3WtknfWiAL`
         }
-    })
-    let rData = await response.json()
-    console.log(rData)
-}
-fetchData()
+      })
+      let rData = await response.json()
+      // console.log(rData)
+      setData(rData)
+    }
+    fetchData()
 
-}
+  }
 
 
   return (
     <div className="App">
-      <Books handleFetch={handleFetch}/>
+      <Books handleFetch={handleFetch} />
       <Characters />
-      <Movies />
+      <Movies handleFetch={handleFetch} data={data} />
     </div>
   );
 }

@@ -1,8 +1,19 @@
+export default function Movies(props) {
 
-export default function Movies() {
-    return(
-        <>
-        Movies
-        </>
+    let movies = []
+
+    if (props.data.docs) {
+        movies = props.data.docs.map((movie, index) => {
+            return (
+               <p key={index}>{movie.name}</p>
+            )
+        })
+    }
+
+    return (
+        <div>
+            <button onClick={(e) => props.handleFetch(e, 'movie')}>Movies</button>
+            {movies}
+        </div>
     )
 }
