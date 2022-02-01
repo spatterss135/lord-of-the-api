@@ -35,7 +35,7 @@ function handleFetch(e, query){
         }
     })
     let rData = await response.json()
-    console.log(rData)
+    setData(rData)
 }
 fetchData()
 
@@ -44,7 +44,8 @@ fetchData()
 
   return (
     <div className="App">
-      <Books handleFetch={handleFetch}/>
+      <Books handleFetch={handleFetch} data={data}/>
+      
       <Characters />
       <Movies />
     </div>
