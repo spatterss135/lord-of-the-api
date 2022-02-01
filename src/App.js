@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from "react";
@@ -10,46 +9,58 @@ import Home from './components/Home'
 import Books from './components/Books';
 import Characters from './components/Characters';
 import Movies from './components/Movies';
+<<<<<<< HEAD
 import NavBar from './components/Nav'
+=======
+import { useEffect, useState } from 'react';
+>>>>>>> 30290e3ef9b40842e9a02930d073c6f430812ee2
 
 function App() {
 
-    let [data, setData] = useState([])
+  let [data, setData] = useState([])
 
-    
+  //   useEffect(() => {
+  //     let fetchData = async () => {
+  //         let response = await fetch(`${endpoint}`, {
+  //             headers: {
+  //                 Authorization: `Bearer QG6hwAvDDV3WtknfWiAL`
+  //             }
+  //         })
+  //         let rData = await response.json()
+  //         console.log(rData)
+  //     }
+  //     fetchData()
+  // })
 
-//   useEffect(() => {
-//     let fetchData = async () => {
-//         let response = await fetch(`${endpoint}`, {
-//             headers: {
-//                 Authorization: `Bearer QG6hwAvDDV3WtknfWiAL`
-//             }
-//         })
-//         let rData = await response.json()
-//         console.log(rData)
-//     }
-//     fetchData()
-// })
-
-function handleFetch(e, query){
-  e.preventDefault()
-  const endpoint =  'https://the-one-api.dev/v2'
-  let fetchData = async () => {
-    let response = await fetch(`${endpoint}/${query}`, {
+  function handleFetch(e, query) {
+    e.preventDefault()
+    const endpoint = 'https://the-one-api.dev/v2'
+    let fetchData = async () => {
+      let response = await fetch(`${endpoint}/${query}`, {
         headers: {
-            Authorization: `Bearer QG6hwAvDDV3WtknfWiAL`
+          Authorization: `Bearer QG6hwAvDDV3WtknfWiAL`
         }
+<<<<<<< HEAD
     })
     let rData = await response.json()
     setData(rData)
 }
 fetchData()
+=======
+      })
+      let rData = await response.json()
+      // console.log(rData)
+      setData(rData)
+    }
+    fetchData()
+>>>>>>> 30290e3ef9b40842e9a02930d073c6f430812ee2
 
-}
+  }
 
 
   return (
     <div className="App">
+<<<<<<< HEAD
       <Router>
         <NavBar></NavBar>
         <Routes>
@@ -59,6 +70,11 @@ fetchData()
           <Route path='/characters' element={<Characters/>}/>
         </Routes>
       </Router>
+=======
+      <Books handleFetch={handleFetch} />
+      <Characters />
+      <Movies handleFetch={handleFetch} data={data} />
+>>>>>>> 30290e3ef9b40842e9a02930d073c6f430812ee2
     </div>
   );
 }
