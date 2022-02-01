@@ -8,6 +8,7 @@ import {
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom'
+import { LinkContainer } from 'react-router-bootstrap'
 
 
 function NavBar(){
@@ -19,17 +20,23 @@ function NavBar(){
                     <Nav variant="tabs" fill>
                         <Nav.Item>
                             <Nav.Link>
-                                <Link to='/home'>Home</Link>
+                                <Link to='/'>Home</Link>
                             </Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Nav.Link eventKey={'Books'} href="/books" >Books</Nav.Link>
+                            <Nav.Link>
+                                <Link to='/books'>Books</Link>
+                            </Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Nav.Link eventKey={'Movies'} href="/movies">Movies</Nav.Link>
+                            <Nav.Link>
+                                <Link to='/movies'>Movies</Link>
+                            </Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Nav.Link eventKey={'Characters'} href="/characters">Characters</Nav.Link>
+                        <Nav.Link>
+                                <Link to='/characters'>Characters</Link>
+                            </Nav.Link>
                         </Nav.Item>
                     </Nav>
                 </Container>
