@@ -44,8 +44,8 @@ fetchData()
 
   return (
     <div className="App">
-      <Books handleFetch={handleFetch} data={data}/>
       
+      <Books handleFetch={handleFetch} data={data}/>
       <Characters />
       <Movies />
     </div>
